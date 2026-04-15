@@ -36,7 +36,107 @@ public class Pattern {
             System.out.println();
         }
 
-        // pattern 4 ()
+        // pattern 4 (solid rhombus with spaces)
+        int n = 4, k = n - 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n + k; j++) {
+                if (j <= k) {
+                    System.out.print("  ");
 
+                } else {
+                    System.out.print(" * ");
+
+                }
+            }
+            System.out.println();
+            k--;
+        }
+
+        // 2nd solution
+        for (int i = 1; i <= n; i++) {
+            // for each row -> spaces, stars
+
+            // spaces
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+
+            // spaces
+            for (int p = 1; p <= n; p++) {
+                System.out.print(" * ");
+            }
+
+            System.out.println();
+        }
+
+        // pattern 5 (inverted solid right angle triangle)
+
+        for (int i = 5; i >= 1; i--) {
+            for (int j = i; j >= 1; j--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // pattern 6 (numbers right angle triangle)
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(" " + j);
+            }
+            System.out.println();
+        }
+
+        // pattern 6 (numbers inverted right angle triangle)
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= 5 - i + 1; j++) {
+                System.out.print(" " + j);
+            }
+            System.out.println();
+        }
+
+        // pattern 7 (solid triangle with spaces)
+        for (int i = 1; i <= n; i++) {
+            // space
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("   ");
+            }
+            // star
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print(" * ");
+            }
+
+            System.out.println();
+        }
+
+        // pattern 8 (solid inverted triangle with spaces)
+        for (int i = 1; i <= n; i++) {
+            // space
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print("   ");
+            }
+            // star
+            for (int j = 1; j <= (n * 2) - (2 * i) + 1; j++) {
+                System.out.print(" * ");
+            }
+
+            System.out.println();
+        }
+
+        // pattern 9 (hollow reactangle)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 6; j++) {
+                if (i > 1 && i < n) {
+                    if (j == 1 || j == 6) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("  ");
+                    }
+                } else {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
