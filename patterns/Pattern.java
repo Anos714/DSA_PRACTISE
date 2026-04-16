@@ -175,7 +175,7 @@ public class Pattern {
         }
 
         // pattern 12 (diamond shape pattern)
-        int z = 4;
+        int z = 9;
         // part-1
         for (int i = 1; i <= z; i++) {
             // spaces
@@ -249,6 +249,57 @@ public class Pattern {
                     System.out.print("  ");
                 }
 
+            }
+            System.out.println();
+        }
+
+        // pattern 14 (h shape triangle pattern)
+        // part-1
+        for (int i = 1; i <= z; i++) {
+            if (i < z) {
+                // star
+                for (int j = 1; j <= i; j++) {
+                    System.out.print("* ");
+
+                }
+
+                // space
+                for (int j = 1; j <= 2 * (z - i); j++) {
+                    System.out.print("  ");
+                }
+
+                // star
+                for (int j = 1; j <= i; j++) {
+                    System.out.print("* ");
+                }
+            } else {
+                for (int j = 1; j <= 2 * i; j++) {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+
+        }
+
+        // part-2
+        for (int i = 1; i <= z; i++) {
+            if (i > 1) {
+                // star
+                for (int j = 1; j <= z - i + 1; j++) {
+                    System.out.print("* ");
+                }
+                // space
+                for (int j = 1; j <= 2 * i - 2; j++) {
+                    System.out.print("  ");
+                }
+                // star
+                for (int j = 1; j <= z - i + 1; j++) {
+                    System.out.print("* ");
+                }
+            } else {
+                for (int j = 1; j <= 2 * z * i; j++) {
+                    System.out.print("* ");
+                }
             }
             System.out.println();
         }
