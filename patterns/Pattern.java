@@ -37,7 +37,7 @@ public class Pattern {
         }
 
         // pattern 4 (solid rhombus with spaces)
-        int n = 4, k = n - 1;
+        int n = 5, k = n - 1;
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n + k; j++) {
                 if (j <= k) {
@@ -138,5 +138,120 @@ public class Pattern {
             }
             System.out.println();
         }
+
+        // pattern 10 (hollow right angle triangle)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (i > 2 && i < n) {
+                    if (j > 1 && j < i) {
+                        System.out.print("  ");
+                    } else {
+                        System.out.print("* ");
+                    }
+                } else {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
+
+        // pattern 11 (hollow traingle with spaces)
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (i > 1 && i < n) {
+                    if (j == 1 || j == 2 * i - 1) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("  ");
+                    }
+                } else {
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
+
+        // pattern 12 (diamond shape pattern)
+        int z = 4;
+        // part-1
+        for (int i = 1; i <= z; i++) {
+            // spaces
+            for (int j = 1; j <= z - i; j++) {
+                System.out.print("  ");
+            }
+
+            // star
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // part-2
+        for (int i = 1; i <= z; i++) {
+            if (i == 1) {
+                continue;
+            }
+            // space
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print("  ");
+            }
+            // star
+            for (int j = 1; j <= 2 * z - 2 * i + 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+
+        }
+
+        // pattern 13 (hollow diamond)
+        // part-1
+        for (int i = 1; i <= z; i++) {
+            // space
+            for (int j = 1; j <= z - i; j++) {
+                System.out.print("  ");
+            }
+            // star
+
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                if (i > 1 && i <= z) {
+                    if (j == 1 || j == 2 * i - 1) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("  ");
+                    }
+                } else {
+                    System.out.print("* ");
+                }
+
+            }
+            System.out.println();
+
+        }
+
+        // part-2
+        for (int i = 1; i <= z; i++) {
+            if (i == 1) {
+                continue;
+            }
+            // space
+            for (int j = 1; j <= i - 1; j++) {
+                System.out.print("  ");
+            }
+            // star
+            for (int j = 1; j <= 2 * z - 2 * i + 1; j++) {
+                if (j == 1 || j == 2 * z - 2 * i + 1) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+
+            }
+            System.out.println();
+        }
+
     }
 }
