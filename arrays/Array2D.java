@@ -48,13 +48,32 @@ public class Array2D {
         }
 
         // traverse jagged array
+        // print the sum and mul of all elements in 2d array
+        // find the max and min value of array
+        int sum = 0;
+        int mul = 1;
+        int max = jagged[0][0];
+        int min = jagged[0][0];
 
         for (int i = 0; i < jagged.length; i++) {
             for (int j = 0; j < jagged[i].length; j++) {
+                sum += jagged[i][j];
+                mul *= jagged[i][j];
                 System.out.print(jagged[i][j] + " ");
+                if (max < jagged[i][j]) {
+                    max = jagged[i][j];
+                }
+                if (min > jagged[i][j]) {
+                    min = jagged[i][j];
+                }
 
             }
             System.out.println();
         }
+        System.out.println("Sum: " + sum);
+        System.out.println("Mul: " + mul);
+        System.out.println("Max: " + max);
+        System.out.println("Min: " + min);
+
     }
 }
