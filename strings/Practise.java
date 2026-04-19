@@ -54,6 +54,22 @@ public class Practise {
 
         sc.close();
 
+        // 2 pointer technique
+        String jaa = "Rahul";
+        char[] arr1 = jaa.toCharArray();
+        int start = 0, end = jaa.length() - 1;
+        while (start < end) {
+            char temp = arr1[start];
+            arr1[start] = arr1[end];
+            arr1[end] = temp;
+            start++;
+            end--;
+
+        }
+
+        String bhi = new String(arr1);
+        System.out.println(bhi);
+
     }
 
 }
