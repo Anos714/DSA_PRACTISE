@@ -46,6 +46,7 @@ I started from scratch and I am building my understanding step by step.
 
 ## 📁 Repository Structure
 
+```bash
 DSA_PRACTISE
 ├── DSA
 ├── Java-Basics
@@ -59,6 +60,7 @@ DSA_PRACTISE
 │   ├── patterns
 │   └── strings
 └── README.md
+```
 
 Each folder contains:
 
