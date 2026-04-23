@@ -61,7 +61,7 @@ public class Basic {
         } else if (num == 2) {
             isPrime = true;
         } else {
-            for (int i = 3; i < Math.sqrt(num); i++) {
+            for (int i = 3; i <= Math.sqrt(num); i++) {
                 if (num % i == 0) {
                     isPrime = false;
                     break;
@@ -104,6 +104,131 @@ public class Basic {
         return ans;
     }
 
+    static int factorial(int num) {
+        int ans = 1;
+        while (num > 1) {
+            ans *= num;
+            num--;
+        }
+        return ans;
+    }
+
+    static int lengthOfNum(int num) {
+        int len = 0;
+        while (num > 0) {
+            num = num / 10;
+            len++;
+        }
+        return len;
+    }
+
+    static int isArmstrong(int num) {
+        // part-1 find the length of given number
+        int len = lengthOfNum(num);
+        int digit;
+        double sum = 0;
+
+        while (num > 0) {
+            digit = num % 10;
+
+            sum = sum + Math.pow(digit, len);
+            num = num / 10;
+
+        }
+
+        return (int) sum;
+
+    }
+
+    static int powerOfNum(int num, int pow) {
+        int sum = 1;
+        while (pow > 0) {
+            sum = sum * num;
+            pow--;
+        }
+        return sum;
+    }
+
+    static int perfectNumber(int num) {
+        int sum = 0;
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                System.out.println("divisor: " + i);
+                sum = sum + i;
+            }
+        }
+        return sum;
+    }
+
+    static boolean checkPrimeOrNot(int num) {
+        if (num < 2) {
+            return false;
+        }
+
+        if (num == 2) {
+            return true;
+        }
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
+    }
+
+    static void printPrimeNo(int num) {
+        for (int i = 2; i <= num; i++) {
+            boolean isPrime = checkPrimeOrNot(i);
+            if (isPrime == true) {
+                System.out.println(i + " is a prime no.");
+            }
+        }
+    }
+
+    static void countNumberEvendigit(int num) {
+        int count = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) {
+                System.out.println("even digit: " + digit);
+                count++;
+            }
+            num /= 10;
+
+        }
+        System.out.println("Count of even digit in a number: " + count);
+    }
+
+    static void sieveAlgo(int num) {
+        boolean isPrime[] = new boolean[num + 1];
+        for (int i = 0; i <= num; i++) {
+            if (i == 0 || i == 1) {
+                isPrime[i] = false;
+            } else {
+                isPrime[i] = true;
+            }
+
+        }
+
+        for (int i = 2; i * i <= num; i++) {
+            if (isPrime[i] == true) {
+                for (int j = i * i; j <= num; j = j + i) {
+                    isPrime[j] = false;
+                }
+            }
+
+        }
+
+        for (int i = 0; i <= num; i++) {
+            if (isPrime[i] == true) {
+                System.out.println(i + " is prime no.");
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         // print digits of a number
         int num = 12345;
@@ -133,7 +258,7 @@ public class Basic {
         }
 
         // check a number is prime or not
-        boolean isPrime = checkPrime(42);
+        boolean isPrime = checkPrime(27);
         if (!isPrime)
             System.out.println("Not prime no.");
         else
@@ -148,5 +273,33 @@ public class Basic {
         // find lcm of a number
         System.out.println(lcm(12, 15));
 
+        // factorial of a number
+        System.out.println(factorial(5));
+
+        // check no. is armstrong no. or not
+        int num2 = 1634;
+        if (isArmstrong(num2) == num2)
+            System.out.println(num2 + " is armstrong no.");
+        else
+            System.out.println(num2 + " is not armstrong no.");
+
+        // power of a number
+        System.out.println(powerOfNum(12, 4));
+
+        // find divisors or check perfect number
+        int num3 = 28;
+        if (perfectNumber(num3) == num3)
+            System.out.println(num3 + " is perfect number");
+        else
+            System.out.println(num3 + " is not a perfect no.");
+
+        // print all prime no. from 1 to n
+        printPrimeNo(100);
+
+        // Count how many digits in a number are even.
+        countNumberEvendigit(52634);
+
+        // sieve of eratosthenes algo for finding prime no.
+        sieveAlgo(20);
     }
 }
