@@ -49,5 +49,13 @@ public class Objects {
         Animal a2 = new Animal(a1); // here we copying the object a1 to a2
 
         a2.animalInfo(a2.animalName, a2.animalSpecies, a2.isAnimalExtinct);
+
+        // objct lifecycle
+        /*
+         * 1. object creation
+         * 2. we define attributes and behavious
+         * 3. after that object ends(dead)
+         * 
+         */
     }
 }
