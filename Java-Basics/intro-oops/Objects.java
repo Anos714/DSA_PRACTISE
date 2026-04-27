@@ -44,5 +44,10 @@ public class Objects {
         // a1.isAnimalExtinct = true;
 
         a1.animalInfo(a1.animalName, a1.animalSpecies, a1.isAnimalExtinct);
+
+        // copy constructor
+        Animal a2 = new Animal(a1); // here we copying the object a1 to a2
+
+        a2.animalInfo(a2.animalName, a2.animalSpecies, a2.isAnimalExtinct);
     }
 }

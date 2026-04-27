@@ -16,9 +16,12 @@ public class Animal {
 
     }
 
-    //copy constructor
-    Animal(){
-        
+    // copy constructor
+    public Animal(Animal obj) {
+        System.out.println("Copy contructor called");
+        this.animalName = obj.animalName;
+        this.animalSpecies = obj.animalSpecies;
+        this.isAnimalExtinct = obj.isAnimalExtinct;
     }
 
     public void animalInfo(String animalName, String animalSpecies, boolean isAnimalExtinct) {
