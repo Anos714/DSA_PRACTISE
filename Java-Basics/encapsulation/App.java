@@ -7,5 +7,10 @@ public class App {
         // System.out.println(s1.age);
         // s1.studentGf(s1.id)//it throws error bcx=z it is private method so it is not
         // accessible
+
+        // getter and setter
+        System.out.println(s1.getStudentGfName());
+        s1.setStudentGfName("Ashley");
+
     }
 }

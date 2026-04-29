@@ -20,4 +20,14 @@ class Student {
     public void study(int id) {
         System.out.println("Student whose id is " + id + " is studying.");
     }
+
+    public String getStudentGfName() {
+        return this.gfName;
+    }
+
+    public void setStudentGfName(String gfName) {
+        this.gfName = gfName;
+        System.out.println("Student gf: " + gfName);
+    }
+
 }
