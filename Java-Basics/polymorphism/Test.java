@@ -12,6 +12,7 @@
  * b) Dynamic Method Dispatch
  */
 
+//1. Compile Time Polymorphism
 // a) method overloading
 class Test {
     void add(int a, int b) {
@@ -60,4 +61,73 @@ class Test3 {
         // addition and string concatenation, but user-defined operator overloading is
         // not supported.”
     }
+}
+
+// 2. Run Time Polymorphism
+// a) method overriding
+class Parent {
+    int a = 10;
+
+    Parent() {
+        System.out.println("Parent class constructor is called");
+    }
+
+    void display() {
+        System.out.println("Parent class display method is called");
+    }
+}
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() { // overriding
+        System.out.println("Dog barks");
+    }
+}
+
+// b) dynamic method dispatch
+class Animal1 {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog1 extends Animal1 {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal1 {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+// method overriding by @override annotation
+class Parent1 {
+    void display() {
+        System.out.println("Parent class display method is called");
+    }
+}
+
+class Child1 extends Parent1 {
+    // @Override
+    void display() {
+        System.out.println("Child class display method is called");
+    }
+
+    /*
+     * What is @Override in Java?
+     * 
+     * @Override is an annotation that tells the compiler:
+     * 
+     * “This method is supposed to override a method from the parent class or
+     * interface.”
+     * 
+     */
 }
