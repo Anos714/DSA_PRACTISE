@@ -108,6 +108,25 @@ class Cat extends Animal1 {
     }
 }
 
+// example
+class Boss {
+    void work() {
+        System.out.println("Boss is working");
+    }
+}
+
+class Developer extends Boss {
+    void work() {
+        System.out.println("Developer is working");
+    }
+}
+
+class Designer extends Boss {
+    void work() {
+        System.out.println("Designer is working");
+    }
+}
+
 // method overriding by @override annotation
 class Parent1 {
     void display() {

@@ -25,6 +25,11 @@ public class Main {
         Animal1 a2 = new Cat();
         a2.sound();// Output: Cat meows
 
+        Boss b = new Developer();
+        b.work();// Output: Developer is working
+        Boss d = new Designer();
+        d.work();// Output: Designer is working
+
         // Method Overriding with @Override annotation
         Parent1 p = new Parent1();
         p.display();// Output: Parent class display method is called
