@@ -36,6 +36,12 @@ public class Main {
 
         Child1 c = new Child1();
         c.display();// Output: Child class display method is called
+
+        Parent2 p1 = new Parent2();
+        p1.display();
+
+        Child2 c1 = new Child2();
+        c1.display();
     }
 
     /*

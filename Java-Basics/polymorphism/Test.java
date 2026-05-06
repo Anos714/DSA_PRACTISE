@@ -150,3 +150,15 @@ class Child1 extends Parent1 {
      * 
      */
 }
+
+class Parent2 {
+    void display() {
+        System.out.println("Parent class display method is called");
+    }
+}
+
+class Child2 extends Parent2 {
+    void display() {
+        System.out.println("Child class display method is called");
+    }
+}
