@@ -1,6 +1,8 @@
 package ArrayProblems;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class ArrayProblems {
     public static double avgArrElement(int nums[]){
@@ -130,6 +132,102 @@ static void countZeroAndOnes(int nums[]){
         return res4;
     }
 
+    static void reverseArr(int nums[]){
+        int resultArray[]=new int[nums.length];
+        int start=0;
+        int end=nums.length-1;
+        // 1st method
+        // for(int i=nums.length-1;i>=0;i--){
+        //     resultArray[start]=nums[i];
+        //     start++;
+        // }
+
+        // 2nd method (2 pointer)
+        while(start<=end){
+            int temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+
+            start++;
+            end--;
+        }
+
+        for(Integer i:nums){
+            System.out.println("Reverse: "+i);
+        }
+
+    }
+
+
+    static void shiftArrByOne(int arr[]){
+        int temp=arr[arr.length-1];
+        for(int i=arr.length-1;i>=0;i--){
+
+            if(i<1){
+                System.out.println("hi");
+                arr[0]=temp;
+            }
+            else{
+
+                arr[i]=arr[i-1];
+
+            }
+        }
+
+        for(Integer i:arr){
+            System.out.println("Shift: "+i);
+        }
+    }
+
+    static void shiftArrByK(int arr[],int k){
+        int l[]=new int[k];
+
+        int dec=arr.length-1;
+        for(int i=0;i<k;i++){
+            l[i]=arr[dec];
+            dec--;
+        }
+
+
+        for(int i=arr.length-1;i>=0;i--){
+            if(i<k){
+                System.out.println(i);
+                arr[i]=l[(k-1)-i];
+            }else{
+                arr[i]=arr[i-k];
+            }
+        }
+
+        for(Integer i:arr){
+            System.out.print(i);
+        }
+    }
+
+    static void modeOfArr(int arr[]){
+        int n=arr.length;
+        HashMap<Integer,Integer> hmp=new HashMap<>();
+
+        for(int a:arr){
+            hmp.put(a,hmp.getOrDefault(a,0)+1);
+        }
+
+
+       int maxFreq=0;
+        int maxFreqNum=0;
+
+        for(Integer i:hmp.keySet()){
+            if(maxFreq<hmp.get(i)){
+                maxFreq=hmp.get(i);
+                maxFreqNum=i;
+            }
+        }
+
+        System.out.println("Max frequency no: %d and its frequency: %d".formatted(maxFreqNum,maxFreq));
+
+    }
+
+
+
     static void main() {
 
         // avg array element
@@ -169,8 +267,28 @@ static void countZeroAndOnes(int nums[]){
 
        //    print alternate extreme elements of an array
             ArrayList<Integer> res4=new ArrayList<>();
-                   res4=alternateExtremeEle(new int[]{10,20,30,40,50,60,70,80,90,100});
+                   res4=alternateExtremeEle(new int[]{10,20,30,40,50,60,70,80,90});
            System.out.println(res4);
+
+       //     reverse an array
+       //     int res5[]=reverseArr(new int[]{2,4,6,8,9});
+       //     for(Integer l:res5){
+       //         System.out.println(l);
+       //     }
+
+           reverseArr(new int[]{2,4,6,8,9});
+
+
+           //     right shift an array by 1 position
+           shiftArrByOne(new int[]{1,25,33,44,2,12});
+
+       //     right shift an array by k pos.
+shiftArrByK(new int[]{1,2,3,4,5,6,7,8},3);
+
+
+       // find mode of an array
+           modeOfArr(new int[]{1,2,2,3,3,4,2,2,2,1});
+
 
        }
     }
