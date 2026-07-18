@@ -228,6 +228,68 @@ static void countZeroAndOnes(int nums[]){
 
 
 
+    static void leastMostElement(int arr[]){
+        int n=arr.length;
+        HashMap<Integer,Integer> hmp=new HashMap<>();
+
+        for(int a:arr){
+            hmp.put(a,hmp.getOrDefault(a,0)+1);
+        }
+        System.out.println(hmp);
+
+        int maxFreq=0;
+        int maxFreqNum=0;
+        int minFreq=Integer.MAX_VALUE;
+        int minFreqNum=0;
+
+        for(Integer i:hmp.keySet()){
+            if(maxFreq<hmp.get(i)){
+                maxFreq=hmp.get(i);
+                maxFreqNum=i;
+                System.out.println(i);
+                System.out.println(maxFreq);
+
+            }
+
+
+        }
+
+        for(Integer i:hmp.keySet()){
+            System.out.println("jai");
+            if(minFreq>hmp.get(i)){
+                System.out.println("hi");
+                minFreq=hmp.get(i);
+                minFreqNum=i;
+            }
+
+
+        }
+
+
+        System.out.println("Max frequency no: %d and its frequency: %d, Min frequency no: %d and its freq: %d".formatted(maxFreqNum,maxFreq,minFreqNum,minFreq));
+
+
+    }
+
+
+    static ArrayList<Integer> unionOfArr(int[]arr1, int[]arr2){
+        ArrayList<Integer> newArr=new ArrayList<>();
+
+
+        for(int j=0;j<arr1.length;j++){
+            newArr.add(arr1[j]);
+        }
+        for(int i=0;i<arr2.length;i++){
+            System.out.println("i: "+i);
+            if(arr2[i]!=newArr.get(i)&&!newArr.contains(arr2[i])){
+                newArr.add(arr2[i]);
+            }else if(arr2[i]==newArr.get(i)&&!newArr.contains(arr2[i])){
+                newArr.add(arr2[i]);
+            }
+        }
+        return newArr;
+    }
+
     static void main() {
 
         // avg array element
@@ -289,7 +351,12 @@ shiftArrByK(new int[]{1,2,3,4,5,6,7,8},3);
        // find mode of an array
            modeOfArr(new int[]{1,2,2,3,3,4,2,2,2,1});
 
+           // find least and most frequency element of an array
+           leastMostElement(new int[]{1,2,2,3,3,4,2,2,2,1});
 
+       //     union of 2 array
+           ArrayList<Integer>res6=unionOfArr(new int[]{1,2,3,4,5},new int[]{2,5,6,11,22,1,6,21,21});
+           System.out.println(res6);
        }
     }
 }
